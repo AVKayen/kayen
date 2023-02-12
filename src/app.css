@@ -1,2 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap");
 
+.one-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 3rem;
+}
+:root {
+  overflow: hidden;
+  /* coffee color pallete  */
+  --color-1: #f2f2f2;
+  font-family: JetBrains Mono, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: #45384a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  white-space: pre-line !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wierd_text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #edede9;
+  text-shadow: 0 0 0.2rem #e7a88b;
+}
+.letter {
+  text-align: start;
+  white-space: pre;
+  margin: 1rem;
+}
+p {
+  color: #e7a88b;
+  font-size: 1.5rem;
+  text-shadow: 0 0 0.1rem #e7a88b;
+}
+ul {
+  color: #e7a88b;
+  font-size: 1.5rem;
+  text-shadow: 0 0 0.1rem #e7a88b;
+}
+li {
+  color: #e7a88b;
+  font-size: 1.5rem;
+  text-shadow: 0 0 0.1rem #e7a88b;
+}
+a {
+  color: #e7a88b;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-shadow: 0 0 0.1rem #edede9;
+}
+h1 {
+  color: #e7a88b;
+  font-size: 3rem;
+  text-shadow: 0 0 0.1rem #e7a88b;
+}

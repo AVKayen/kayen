@@ -191,60 +191,66 @@ KAYE    ENKA   ";
     let m = Math.floor(Math.random() * 140);
     setInterval(() => {
       for (let s = 0; s < 10; s++) {
-      if (
-        letter_k[i] === "K" ||
-        letter_k[i] === "A" ||
-        letter_k[i] === "Y" ||
-        letter_k[i] === "E" ||
-        letter_k[i] === "N"
-      ) {
-        randomizeLetter(i, "k");
+        if (
+          letter_k[i] === "K" ||
+          letter_k[i] === "A" ||
+          letter_k[i] === "Y" ||
+          letter_k[i] === "E" ||
+          letter_k[i] === "N"
+        ) {
+          randomizeLetter(i, "k");
+        }
+        if (
+          letter_a[j] === "K" ||
+          letter_a[j] === "A" ||
+          letter_a[j] === "Y" ||
+          letter_a[j] === "E" ||
+          letter_a[j] === "N"
+        ) {
+          randomizeLetter(j, "a");
+        }
+        if (
+          letter_y[k] === "K" ||
+          letter_y[k] === "A" ||
+          letter_y[k] === "Y" ||
+          letter_y[k] === "E" ||
+          letter_y[k] === "N"
+        ) {
+          randomizeLetter(k, "y");
+        }
+        if (
+          letter_e[l] === "K" ||
+          letter_e[l] === "A" ||
+          letter_e[l] === "Y" ||
+          letter_e[l] === "E" ||
+          letter_e[l] === "N"
+        ) {
+          randomizeLetter(l, "e");
+        }
+        if (
+          letter_n[m] === "K" ||
+          letter_n[m] === "A" ||
+          letter_n[m] === "Y" ||
+          letter_n[m] === "E" ||
+          letter_n[m] === "N"
+        ) {
+          randomizeLetter(m, "n");
+        }
+        i = Math.floor(Math.random() * 142);
+        j = Math.floor(Math.random() * 142);
+        k = Math.floor(Math.random() * 142);
+        l = Math.floor(Math.random() * 142);
+        m = Math.floor(Math.random() * 142);
       }
-      if (
-        letter_a[j] === "K" ||
-        letter_a[j] === "A" ||
-        letter_a[j] === "Y" ||
-        letter_a[j] === "E" ||
-        letter_a[j] === "N"
-      ) {
-        randomizeLetter(j, "a");
-      }
-      if (
-        letter_y[k] === "K" ||
-        letter_y[k] === "A" ||
-        letter_y[k] === "Y" ||
-        letter_y[k] === "E" ||
-        letter_y[k] === "N"
-      ) {
-        randomizeLetter(k, "y");
-      }
-      if (
-        letter_e[l] === "K" ||
-        letter_e[l] === "A" ||
-        letter_e[l] === "Y" ||
-        letter_e[l] === "E" ||
-        letter_e[l] === "N"
-      ) {
-        randomizeLetter(l, "e");
-      }
-      if (
-        letter_n[m] === "K" ||
-        letter_n[m] === "A" ||
-        letter_n[m] === "Y" ||
-        letter_n[m] === "E" ||
-        letter_n[m] === "N"
-      ) {
-        randomizeLetter(m, "n");
-      }
-      i = Math.floor(Math.random() * 142);
-      j = Math.floor(Math.random() * 142);
-      k = Math.floor(Math.random() * 142);
-      l = Math.floor(Math.random() * 142);
-      m = Math.floor(Math.random() * 142);
-    }
     }, 1);
   });
 </script>
+
+<svelte:head>
+  <title>Adam Gałęziewski</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</svelte:head>
 
 <main>
   <h1>Adam Gałęziewski</h1>
@@ -259,7 +265,7 @@ KAYE    ENKA   ";
     <p>full stack developer</p>
     <a href="https://github.com/AVKayen">github -></a>
   </div>
-  <br>
+  <br />
   <p>things i also do:</p>
   <ul>
     <li>design</li>
@@ -271,73 +277,3 @@ KAYE    ENKA   ";
     <li>being a cute catboy ^^</li>
   </ul>
 </main>
-
-<style>
-  .one-line {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 3rem;
-  }
-  :root {
-    overflow: hidden;
-    /* coffee color pallete  */
-    --color-1: #f2f2f2;
-    font-family: JetBrains Mono, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-
-    background-color: #45384a;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    white-space: pre-line !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .wierd_text {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #edede9;
-    text-shadow: 0 0 0.2rem #e7a88b;
-  }
-  .letter {
-    text-align: start;
-    white-space: pre;
-    margin: 1rem;
-  }
-  p {
-    color: #e7a88b;
-    font-size: 1.5rem;
-    text-shadow: 0 0 0.1rem #e7a88b;
-  }
-  ul {
-    color: #e7a88b;
-    font-size: 1.5rem;
-    text-shadow: 0 0 0.1rem #e7a88b;
-  }
-  li {
-    color: #e7a88b;
-    font-size: 1.5rem;
-    text-shadow: 0 0 0.1rem #e7a88b;
-  }
-  a {
-    color: #e7a88b;
-    font-size: 1.5rem;
-    text-decoration: none;
-    text-shadow: 0 0 0.1rem #edede9;
-  }
-  h1 {
-    color: #e7a88b;
-    font-size: 3rem;
-    text-shadow: 0 0 0.1rem #e7a88b;
-  }
-</style>
