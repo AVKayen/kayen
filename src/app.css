@@ -14,16 +14,11 @@
   --background-color: #45384a;
   --color-1: #e7a88b;
   --color-2: #edede9;
-  font-family: JetBrains Mono, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: JetBrains Mono, monospace;
   font-weight: 500;
   
   background-color: var(--background-color);
   transition: all 0.5s ease;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
   white-space: pre-line !important;
   display: flex;
   flex-direction: column;
@@ -65,6 +60,7 @@ ul {
   color: var(--color-1);
   font-size: 1.5rem;
   text-shadow: 0 0 0.1rem var(--color-1);
+  line-height: 0rem;
 }
 li {
   color: var(--color-1);
