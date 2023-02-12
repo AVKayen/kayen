@@ -55,6 +55,8 @@ li {
   color: #e7a88b;
   font-size: 1.5rem;
   text-shadow: 0 0 0.1rem #e7a88b;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 a {
   color: #e7a88b;
