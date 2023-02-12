@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-
+  let moveX = 0;
+  let moveY = 0;
   let letter_k =
     "\
 KAYEN   ENKAYE \n\
@@ -36,27 +37,27 @@ AYEN     KAYE  \n";
      KAYE      ";
   let letter_e =
     "\
-KAYENKAYENKA   \n\
-KAYENKAYENKA   \n\
-KAYE           \n\
-KAYENKAYENKA   \n\
-KAYENKAYENKA   \n\
-KAYE           \n\
-KAYE           \n\
-KAYENKAYENKA   \n\
-KAYENKAYENKA   ";
+  KAYENKAYENKA \n\
+  KAYENKAYENKA \n\
+  KAYE         \n\
+  KAYENKAYENKA \n\
+  KAYENKAYENKA \n\
+  KAYE         \n\
+  KAYE         \n\
+  KAYENKAYENKA \n\
+  KAYENKAYENKA ";
   let letter_n =
     "\
-KAYEn   ENKA   \n\
-KAYENk  ENKA   \n\
-KAYENKK ENKA   \n\
-KAYENKKKENKA   \n\
-KAYE KAKENKA   \n\
-KAYE  AYENKA   \n\
-KAYE   YENKA   \n\
-KAYE    ENKA   \n\
-KAYE    ENKA   ";
-
+  KAYEn   ENKA \n\
+  KAYENk  ENKA \n\
+  KAYENKK ENKA \n\
+  KAYENKKKENKA \n\
+  KAYE KAKENKA \n\
+  KAYE  AYENKA \n\
+  KAYE   YENKA \n\
+  KAYE    ENKA \n\
+  KAYE    ENKA ";
+  let theme = "base";
   let new_k =
     "\
                \n\
@@ -244,6 +245,30 @@ KAYE    ENKA   ";
       }
     }, 1);
   });
+  let moveBack = () => {
+    let interval = setInterval(() => {
+      moveX = moveX + (moveX + 1) / 16;
+      moveY = moveY + (moveY + 1) / 16;
+      if (moveX > 1000) {
+        moveX = 1000;
+        moveY = 1000;
+        clearInterval(interval);
+      }
+      console.log(moveX);
+    }, 1);
+  };
+  let moveForward = () => {
+    let interval = setInterval(() => {
+      moveX = moveX - (1000 - moveX + 1) / 16;
+      moveY = moveY - (1000 - moveY + 1) / 16;
+      if (moveX < 30) {
+        moveX = 0;
+        moveY = 0;
+        clearInterval(interval);
+      }
+      console.log(moveX);
+    }, 1);
+  };
 </script>
 
 <svelte:head>
@@ -252,28 +277,159 @@ KAYE    ENKA   ";
   <link rel="stylesheet" href="style.css" />
 </svelte:head>
 
-<main>
-  <h1>Adam Gałęziewski</h1>
-  <div class="wierd_text" on:focus>
-    <div class="letter k">{new_k}</div>
-    <div class="letter a">{new_a}</div>
-    <div class="letter y">{new_y}</div>
-    <div class="letter e">{new_e}</div>
-    <div class="letter n">{new_n}</div>
+<main style="--mainx: {moveX}px; --mainy: {moveY}px">
+  <div id="main-island">
+    <h1>Adam Gałęziewski</h1>
+    <div class="wierd_text" on:focus>
+      <button
+        class="letter"
+        on:click={() => {
+          theme = "k";
+        }}>{new_k}</button
+      >
+      <button
+        class="letter"
+        on:click={() => {
+          theme = "a";
+        }}>{new_a}</button
+      >
+      <button
+        class="letter"
+        on:click={() => {
+          theme = "y";
+        }}>{new_y}</button
+      >
+      <button
+        class="letter"
+        on:click={() => {
+          theme = "e";
+        }}>{new_e}</button
+      >
+      <button
+        class="letter"
+        on:click={() => {
+          theme = "n";
+        }}>{new_n}</button
+      >
+    </div>
+    <div class="one-line">
+      <p>full stack developer</p>
+      <a href="https://github.com/AVKayen">github -></a>
+    </div>
+    <br />
+    <p>things i also do:</p>
+    <ul>
+      <li>graphic design</li>
+      <li>music</li>
+      <li>japanese -&gt english &lt-&gt polish translations</li>
+      <li>photography</li>
+      <li>video</li>
+      <li>c++ and rust development</li>
+      <li>being a cute catboy ^^</li>
+    </ul>
+    <button class="goto" on:click={moveBack}>Go to my projects -></button>
   </div>
-  <div class="one-line">
-    <p>full stack developer</p>
-    <a href="https://github.com/AVKayen">github -></a>
+  <div class="second-island">
+    <div class="projects">
+      <div class="project">
+        <div class="one-line"><h2>kayen.pl</h2><a href="/">go -></a></div>
+        <p>
+          My personal website. A single page application made with Svelte and hosted on Vercel.
+        </p>
+      </div>
+      <div class="project">
+        <div class="one-line"><h2>paste.kayen.pl</h2><a href="https://paste.kayen.pl">go -></a></div>
+        <p>
+          A pastebin-like website. Private for now.
+        </p>
+      </div>
+      <button class="goto" on:click={moveForward}>&lt- Back</button>
+    </div>
   </div>
-  <br />
-  <p>things i also do:</p>
-  <ul>
-    <li>design</li>
-    <li>music</li>
-    <li>japanese -?> english &lt-&gt polish translations</li>
-    <li>photography</li>
-    <li>video</li>
-    <li>c++ and rust development</li>
-    <li>being a cute catboy ^^</li>
-  </ul>
 </main>
+
+{#if theme === "main"}
+  <style>
+    :root {
+      --background-color: #45384a;
+      --color-1: #e7a88b;
+      --color-2: #edede9;
+    }
+  </style>
+{:else if theme === "k"}
+  <style>
+    :root {
+      --background-color: #343330;
+      --color-1: #fbf8e7;
+      --color-2: #db5143;
+    }
+  </style>
+{:else if theme === "a"}
+  <style>
+    :root {
+      --background-color: #4e607f;
+      --color-1: #feffff;
+      --color-2: #cfca36;
+    }
+  </style>
+{:else if theme === "y"}
+  <style>
+    :root {
+      --background-color: #f6f3f6;
+      --color-1: #002ecc;
+      --color-2: #3359cb;
+    }
+  </style>
+{:else if theme === "e"}
+  <style>
+    :root {
+      --background-color: #2e2d2d;
+      --color-1: #f9e38e;
+      --color-2: #fe6165;
+    }
+  </style>
+{:else if theme === "n"}
+  <style>
+    :root {
+      --background-color: #c9bfba;
+      --color-1: #060604;
+      --color-2: #f80d5b;
+    }
+  </style>
+{/if}
+
+<style>
+  #main-island {
+    transform: translate(var(--mainy), var(--mainx));
+  }
+  .second-island {
+    /* slowly transform second island into view */
+    transform: translate(
+      calc(var(--mainy) - 1000px),
+      calc(var(--mainx) - 1500px)
+    );
+  }
+  .goto {
+    background-color: transparent;
+    color: var(--color-2);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Fira Code", monospace;
+    cursor: pointer;
+    transform: translate(0, 0);
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .project {
+    font-family: "Fira Code", monospace;
+    margin: 10px;
+    width: 80%;
+  }
+</style>

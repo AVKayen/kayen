@@ -7,16 +7,18 @@
   align-items: center;
   margin-right: 3rem;
 }
+
 :root {
   overflow: hidden;
   /* coffee color pallete  */
-  --color-1: #f2f2f2;
+  --background-color: #45384a;
+  --color-1: #e7a88b;
+  --color-2: #edede9;
   font-family: JetBrains Mono, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  background-color: #45384a;
-
+  font-weight: 500;
+  
+  background-color: var(--background-color);
+  transition: all 0.5s ease;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -33,39 +35,57 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: #edede9;
-  text-shadow: 0 0 0.2rem #e7a88b;
+  color: var(--color-2);
+  
 }
+
 .letter {
-  text-align: start;
+  color: var(--color-2);
+  font-size: 1rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  font-family: Fira Code, monospace;  
   white-space: pre;
+  text-align: start;
   margin: 1rem;
+  text-shadow: 0 0 0.2rem var(--color-2);
+  font-weight: 400;
 }
 p {
-  color: #e7a88b;
+  color: var(--color-1);
   font-size: 1.5rem;
-  text-shadow: 0 0 0.1rem #e7a88b;
+  text-shadow: 0 0 0.1rem var(--color-1);
 }
 ul {
-  color: #e7a88b;
+  color: var(--color-1);
   font-size: 1.5rem;
-  text-shadow: 0 0 0.1rem #e7a88b;
+  text-shadow: 0 0 0.1rem var(--color-1);
 }
 li {
-  color: #e7a88b;
+  color: var(--color-1);
   font-size: 1.5rem;
-  text-shadow: 0 0 0.1rem #e7a88b;
+  text-shadow: 0 0 0.1rem var(--color-1);
   margin-top: 0;
   margin-bottom: 0;
 }
 a {
-  color: #e7a88b;
+  color: var(--color-1);
   font-size: 1.5rem;
   text-decoration: none;
-  text-shadow: 0 0 0.1rem #edede9;
+  text-shadow: 0 0 0.1rem var(--color-2);
 }
 h1 {
-  color: #e7a88b;
+  color: var(--color-1);
   font-size: 3rem;
-  text-shadow: 0 0 0.1rem #e7a88b;
+  text-shadow: 0 0 0.1rem var(--color-1);
+}
+h2 {
+  color: var(--color-2);
+  font-size: 2rem;
+  text-shadow: 0 0 0.1rem var(--color-1);
 }
