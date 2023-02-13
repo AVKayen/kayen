@@ -280,7 +280,7 @@ AYEN     KAYE  \n";
 <main style="--mainx: {moveX}px; --mainy: {moveY}px">
   <div id="main-island">
     <h1>Adam Gałęziewski</h1>
-    <div class="wierd_text" on:focus>
+    <div class="weird_text" on:focus>
       <button
         class="letter"
         on:click={() => {
