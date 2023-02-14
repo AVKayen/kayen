@@ -10,7 +10,7 @@
 
 :root {
   /* coffee color pallete  */
-  position: absolute;
+  position: fixed;
   --background-color: #45384a;
   --color-1: #e7a88b;
   --color-2: #edede9;
@@ -26,7 +26,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
+  overflow: hidden !important;
   margin: 0;
   padding: 0;
   top: 22vh;
