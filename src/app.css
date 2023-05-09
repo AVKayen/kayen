@@ -20,16 +20,12 @@
   background-color: var(--background-color);
   transition: all 0.5s ease;
   white-space: pre-line !important;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  overflow: hidden !important;
   margin: 0;
   padding: 0;
-  top: 22vh;
 }
 .weird_text {
   display: flex;

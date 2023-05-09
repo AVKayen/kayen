@@ -1,7 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  let moveX = 0;
-  let moveY = 0;
   let letter_k =
     "\
 KAYEN   ENKAYE \n\
@@ -245,30 +243,6 @@ AYEN     KAYE  \n";
       }
     }, 1);
   });
-  let moveBack = () => {
-    let interval = setInterval(() => {
-      moveX = moveX + (moveX + 1) / 16;
-      moveY = moveY + (moveY + 1) / 16;
-      if (moveX > 1000) {
-        moveX = 1000;
-        moveY = 1000;
-        clearInterval(interval);
-      }
-      console.log(moveX);
-    }, 1);
-  };
-  let moveForward = () => {
-    let interval = setInterval(() => {
-      moveX = moveX - (1000 - moveX + 1) / 16;
-      moveY = moveY - (1000 - moveY + 1) / 16;
-      if (moveX < 30) {
-        moveX = 0;
-        moveY = 0;
-        clearInterval(interval);
-      }
-      console.log(moveX);
-    }, 1);
-  };
 </script>
 
 <svelte:head>
@@ -277,7 +251,7 @@ AYEN     KAYE  \n";
   <link rel="stylesheet" href="style.css" />
 </svelte:head>
 
-<main style="--mainx: {moveX}px; --mainy: {moveY}px">
+<main>
   <div id="main-island">
     <h1>Adam Gałęziewski</h1>
     <div class="weird_text" on:focus>
@@ -314,37 +288,19 @@ AYEN     KAYE  \n";
     </div>
     <div class="one-line">
       <p>full stack developer</p>
-      <a href="https://github.com/AVKayen">github -></a>
+      <a href="https://github.com/AVKayen">github -&gt</a>
     </div>
     <br />
     <p>things i also do:</p>
     <ul>
       <li>graphic design</li>
       <li>music</li>
-      <li>japanese -&gt english &lt-&gt polish translations</li>
+      <li>english &lt-&gt polish translations</li>
       <li>photography</li>
       <li>video</li>
-      <li>c++ and rust development</li>
+      <li>c++, python and rust development</li>
       <li>being a cute catboy ^^</li>
     </ul>
-    <button class="goto" on:click={moveBack}>Go to my projects -></button>
-  </div>
-  <div class="second-island">
-    <div class="projects">
-      <div class="project">
-        <div class="one-line"><h2>kayen.pl</h2><a href="/">go -></a></div>
-        <p>
-          My personal website. A single page application made with Svelte and hosted on Vercel.
-        </p>
-      </div>
-      <div class="project">
-        <div class="one-line"><h2>paste.kayen.pl</h2><a href="https://paste.kayen.pl">go -></a></div>
-        <p>
-          A pastebin-like website. Private for now.
-        </p>
-      </div>
-      <button class="goto" on:click={moveForward}>&lt- Back</button>
-    </div>
   </div>
 </main>
 
@@ -397,39 +353,3 @@ AYEN     KAYE  \n";
     }
   </style>
 {/if}
-
-<style>
-  #main-island {
-    transform: translate(var(--mainy), var(--mainx));
-  }
-  .second-island {
-    /* slowly transform second island into view */
-    transform: translate(
-      calc(var(--mainy) - 1000px),
-      calc(var(--mainx) - 1500px)
-    );
-  }
-  .goto {
-    background-color: transparent;
-    color: var(--color-2);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 20px;
-    font-family: "Fira Code", monospace;
-    cursor: pointer;
-    transform: translate(0, 0);
-  }
-  .projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  .project {
-    font-family: "Fira Code", monospace;
-    margin: 10px;
-    width: 80%;
-  }
-</style>
